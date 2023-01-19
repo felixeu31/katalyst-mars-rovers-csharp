@@ -11,12 +11,33 @@ namespace MarsRovers.Tests
         public void initial_position_returned_when_no_movements()
         {
             // Arrange
-
+            var marsRover = new MarsRovers();
             // Act
-            string position = string.Empty;
+            string position = marsRover.Execute(string.Empty);
 
             // Assert
+
             Assert.AreEqual("0:0:N", position);
+        }
+
+        [Test]
+        public void initial_position_oriented_east_returned_when_rotate_right()
+        {
+            // Arrange
+            var marsRover = new MarsRovers();
+            // Act
+            string position = marsRover.Execute("R");
+
+            // Assert
+            Assert.AreEqual("0:0:E", position);
+        }
+    }
+
+    public class MarsRovers
+    {
+        public string Execute(string command)
+        {
+            return "0:0:N";
         }
     }
 }
