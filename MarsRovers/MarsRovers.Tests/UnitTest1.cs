@@ -34,6 +34,20 @@ namespace MarsRovers.Tests
             // Assert
             position.Should().Be("0:0:E");
         }
+
+
+        [Test]
+        public void initial_position_oriented_west_returned_when_rotate_left()
+        {
+            // Arrange
+            var marsRover = new MarsRovers();
+
+            // Act
+            string position = marsRover.Execute("L");
+
+            // Assert
+            position.Should().Be("0:0:W");
+        }
     }
 
     public class MarsRovers
