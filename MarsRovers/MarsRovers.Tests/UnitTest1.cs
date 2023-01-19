@@ -8,9 +8,15 @@ namespace MarsRovers.Tests
         }
 
         [Test]
-        public void Test1()
+        public void initial_position_returned_when_no_movements()
         {
-            Assert.Pass();
+            // Arrange
+
+            // Act
+            string position = string.Empty;
+
+            // Assert
+            Assert.AreEqual("0:0:N", position);
         }
     }
 }
