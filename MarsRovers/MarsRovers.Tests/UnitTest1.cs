@@ -1,3 +1,5 @@
+using FluentAssertions;
+
 namespace MarsRovers.Tests
 {
     public class Tests
@@ -12,12 +14,12 @@ namespace MarsRovers.Tests
         {
             // Arrange
             var marsRover = new MarsRovers();
+
             // Act
             string position = marsRover.Execute(string.Empty);
 
             // Assert
-
-            Assert.AreEqual("0:0:N", position);
+            position.Should().Be("0:0:N");
         }
 
         [Test]
@@ -25,11 +27,12 @@ namespace MarsRovers.Tests
         {
             // Arrange
             var marsRover = new MarsRovers();
+
             // Act
             string position = marsRover.Execute("R");
 
             // Assert
-            Assert.AreEqual("0:0:E", position);
+            position.Should().Be("0:0:E");
         }
     }
 
