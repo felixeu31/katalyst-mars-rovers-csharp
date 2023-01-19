@@ -37,6 +37,9 @@ namespace MarsRovers.Tests
     {
         public string Execute(string command)
         {
+            if (command.Equals("R"))
+                return "0:0:E";
+
             return "0:0:N";
         }
     }
