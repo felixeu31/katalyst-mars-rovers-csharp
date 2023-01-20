@@ -13,7 +13,7 @@ namespace MarsRovers.Tests
         public void initial_position_returned_when_no_movements()
         {
             // Arrange
-            var marsRover = new MarsRovers();
+            var marsRover = MarsRover.Init();
 
             // Act
             string position = marsRover.Execute(string.Empty);
@@ -26,7 +26,7 @@ namespace MarsRovers.Tests
         public void initial_position_oriented_east_returned_when_rotate_right()
         {
             // Arrange
-            var marsRover = new MarsRovers();
+            var marsRover = MarsRover.Init();
 
             // Act
             string position = marsRover.Execute("R");
@@ -40,7 +40,7 @@ namespace MarsRovers.Tests
         public void initial_position_oriented_west_returned_when_rotate_left()
         {
             // Arrange
-            var marsRover = new MarsRovers();
+            var marsRover = MarsRover.Init();
 
             // Act
             string position = marsRover.Execute("L");
@@ -53,7 +53,7 @@ namespace MarsRovers.Tests
         public void initial_position_oriented_west_returned_when_rotate_left_twice()
         {
             // Arrange
-            var marsRover = new MarsRovers();
+            var marsRover = MarsRover.Init();
 
             // Act
             string position = marsRover.Execute("LL");
@@ -67,7 +67,7 @@ namespace MarsRovers.Tests
         public void initial_position_oriented_west_returned_when_rotate_left_three_times()
         {
             // Arrange
-            var marsRover = new MarsRovers();
+            var marsRover = MarsRover.Init();
 
             // Act
             string position = marsRover.Execute("LLL");
@@ -80,7 +80,7 @@ namespace MarsRovers.Tests
         public void initial_position_oriented_west_returned_when_rotate_left_four_times()
         {
             // Arrange
-            var marsRover = new MarsRovers();
+            var marsRover = MarsRover.Init();
 
             // Act
             string position = marsRover.Execute("LLLL");
@@ -94,7 +94,7 @@ namespace MarsRovers.Tests
         public void initial_position_oriented_east_returned_when_rotate_right_two_times()
         {
             // Arrange
-            var marsRover = new MarsRovers();
+            var marsRover = MarsRover.Init();
 
             // Act
             string position = marsRover.Execute("RR");
@@ -108,7 +108,7 @@ namespace MarsRovers.Tests
         public void one_cell_up_when_first_move()
         {
             // Arrange
-            var marsRover = new MarsRovers();
+            var marsRover = MarsRover.Init();
 
             // Act
             string position = marsRover.Execute("M");
@@ -121,7 +121,7 @@ namespace MarsRovers.Tests
         public void one_cell_right_after_rotate_right_and_move()
         {
             // Arrange
-            var marsRover = new MarsRovers();
+            var marsRover = MarsRover.Init();
 
             // Act
             string position = marsRover.Execute("RM");
@@ -136,7 +136,7 @@ namespace MarsRovers.Tests
         public void compound_commands_within_limits(string commands, string output)
         {
             // Arrange
-            var marsRover = new MarsRovers();
+            var marsRover = MarsRover.Init();
 
             // Act
             string position = marsRover.Execute(commands);
