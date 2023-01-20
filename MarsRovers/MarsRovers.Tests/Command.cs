@@ -2,8 +2,6 @@ namespace MarsRovers.Tests;
 
 public abstract class Command
 {
-    protected char _key;
-
     public static Command MoveCommand = new MoveCommand();
     public static Command RightCommand = new RightCommand();
     public static Command LeftCommand = new LeftCommand();
