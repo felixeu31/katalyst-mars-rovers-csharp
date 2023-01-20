@@ -131,5 +131,20 @@ namespace MarsRovers.Tests
         }
 
 
+        [TestCase("MMRMMLM", "2:3:N")]
+        [TestCase("RMMLM", "2:1:N")]
+        public void compound_commands_within_limits(string commands, string output)
+        {
+            // Arrange
+            var marsRover = new MarsRovers();
+
+            // Act
+            string position = marsRover.Execute(commands);
+
+            // Assert
+            position.Should().Be(output);
+        }
+
+
     }
 }

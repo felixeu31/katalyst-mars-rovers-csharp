@@ -10,12 +10,10 @@ public class MarsRovers
         var yPosition = 0;
         var xPosition = 0;
         
-
         foreach (var singleCommand in command)
         {
             if (singleCommand.ToString().Equals("M"))
             {
-
                 switch (orientation)
                 {
 
