@@ -25,22 +25,7 @@ public class MarsRover
         {
             if (command.Equals('M'))
             {
-                switch (orientation)
-                {
-
-                    case 'N':
-                        yPosition++;
-                        break;
-                    case 'E':
-                        xPosition++;
-                        break;
-                    case 'S':
-                        yPosition--;
-                        break;
-                    case 'W':
-                        xPosition--;
-                        break;
-                }
+                Move();
             }
             else
             {
@@ -49,6 +34,25 @@ public class MarsRover
         }
 
         return this.ToString();
+    }
+
+    private void Move()
+    {
+        switch (orientation)
+        {
+            case 'N':
+                yPosition++;
+                break;
+            case 'E':
+                xPosition++;
+                break;
+            case 'S':
+                yPosition--;
+                break;
+            case 'W':
+                xPosition--;
+                break;
+        }
     }
 
     public void Rotate(char direction)
