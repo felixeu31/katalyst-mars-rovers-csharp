@@ -104,5 +104,19 @@ namespace MarsRovers.Tests
         }
 
 
+        [Test]
+        public void one_cell_up_when_first_move()
+        {
+            // Arrange
+            var marsRover = new MarsRovers();
+
+            // Act
+            string position = marsRover.Execute("R");
+
+            // Assert
+            position.Should().Be("1:0:N");
+        }
+
+
     }
 }
