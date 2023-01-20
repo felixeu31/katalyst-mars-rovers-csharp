@@ -146,5 +146,19 @@ namespace MarsRovers.Tests
         }
 
 
+        [Test]
+        public void compound_commands_with_up_overflow()
+        {
+            // Arrange
+            var marsRover = MarsRover.Init();
+
+            // Act
+            string position = marsRover.Execute("MMMMMMMMMM");
+
+            // Assert
+            position.Should().Be("0:0:N");
+        }
+
+
     }
 }
