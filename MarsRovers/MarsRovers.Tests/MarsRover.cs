@@ -4,8 +4,8 @@ using System.Linq;
 public class MarsRover
 {
     private Orientation orientation;
-    private int yPosition;
-    private int xPosition;
+    private Position yPosition;
+    private Position xPosition;
 
     private MarsRover() { }
 
@@ -14,8 +14,8 @@ public class MarsRover
         return new MarsRover
         {
             orientation = Orientation.FromChar('N'),
-            yPosition = 0,
-            xPosition = 0
+            yPosition = Position.FromInteger(0),
+            xPosition = Position.FromInteger(0)
         };
     }
 
@@ -47,16 +47,16 @@ public class MarsRover
         switch (orientation)
         {
             case NOrientation:
-                yPosition++;
+                yPosition.Increment();
                 break;
             case EOrientation:
-                xPosition++;
+                xPosition.Increment();
                 break;
             case SOrientation:
-                yPosition--;
+                yPosition.Decrement();
                 break;
             case WOrientation:
-                xPosition--;
+                xPosition.Decrement();
                 break;
         }
     }
