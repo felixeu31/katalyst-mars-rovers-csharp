@@ -28,7 +28,14 @@ public class Position
 
     public void Decrement()
     {
-        _position--;
+        if (_position == 0)
+        {
+            _position = 9;
+        }
+        else
+        {
+            _position--;
+        }
     }
     public override string ToString()
     {
