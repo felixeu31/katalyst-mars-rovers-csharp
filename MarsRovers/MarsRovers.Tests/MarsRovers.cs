@@ -22,7 +22,7 @@ public class MarsRovers
             }
         }
 
-        return $"{yPosition}:0:{orientation}";
+        return $"0:{yPosition}:{orientation}";
     }
 
     private string rotate(string currentOrientation, string direction)

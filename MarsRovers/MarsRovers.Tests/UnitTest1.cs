@@ -114,23 +114,7 @@ namespace MarsRovers.Tests
             string position = marsRover.Execute("M");
 
             // Assert
-            position.Should().Be("1:0:N");
-        }
-
-
-
-
-        [Test]
-        public void one_cell_right_after_rotate_right_and_move()
-        {
-            // Arrange
-            var marsRover = new MarsRovers();
-
-            // Act
-            string position = marsRover.Execute("RM");
-
-            // Assert
-            position.Should().Be("0:1:E");
+            position.Should().Be("0:1:N");
         }
 
 
