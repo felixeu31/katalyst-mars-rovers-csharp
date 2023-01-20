@@ -4,14 +4,14 @@ public class Position
 {
     private int _position;
 
-    private Position() { }
+    private Position(int position)
+    {
+        _position = position;
+    }
 
     public static Position FromInteger(int position)
     {
-        return new Position
-        {
-            _position = position
-        };
+        return new Position(position);
     }
 
     public void Increment()

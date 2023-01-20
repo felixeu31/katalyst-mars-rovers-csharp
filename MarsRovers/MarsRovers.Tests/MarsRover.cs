@@ -7,16 +7,17 @@ public class MarsRover
     private Position yPosition;
     private Position xPosition;
 
-    private MarsRover() { }
+    private MarsRover(Orientation orientation, Position yPosition, Position xPosition)
+    {
+        this.orientation = orientation;
+        this.yPosition = yPosition;
+        this.xPosition = xPosition;
+    }
 
     public static MarsRover Init()
     {
-        return new MarsRover
-        {
-            orientation = Orientation.FromChar('N'),
-            yPosition = Position.FromInteger(0),
-            xPosition = Position.FromInteger(0)
-        };
+        return new MarsRover(
+            Orientation.FromChar('N'), Position.FromInteger(0), Position.FromInteger(0));
     }
 
     public string ExecuteCommands(string commands)
