@@ -1,20 +1,37 @@
 namespace MarsRovers.Tests;
+using System.Linq;
 
 public class MarsRovers
 {
+
     public string Execute(string command)
     {
-        if (command.Equals("L"))
-            return "0:0:W";
+        var orientation = "N";
+        
 
-        if (command.Equals("LL"))
-            return "0:0:S";
-        if (command.Equals("LLL"))
-            return "0:0:E";
+        foreach (var singleCommand in command)
+        {
+            orientation = rotate(orientation, singleCommand.ToString());
+        }
 
-        if (command.Equals("R"))
-            return "0:0:E";
-
-        return "0:0:N";
+        return $"0:0:{orientation}";
     }
+
+    private string rotate(string currentOrientation, string direction)
+    {
+        switch (currentOrientation)
+        {
+            case "N":
+                return direction == "R" ? "E" : "W";
+            case "E":
+                return direction == "R" ? "S" : "N";    
+            case "S":
+                return direction == "R" ? "W" : "E";
+            case "W":
+                return direction == "R" ? "N" : "S";
+            default:
+                return currentOrientation;
+        }
+    }
+    
 }
