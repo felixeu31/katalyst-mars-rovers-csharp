@@ -3,7 +3,7 @@ using System.Linq;
 
 public class MarsRover
 {
-    private char orientation;
+    private Orientation orientation;
     private int yPosition;
     private int xPosition;
 
@@ -13,7 +13,7 @@ public class MarsRover
     {
         return new MarsRover
         {
-            orientation = 'N',
+            orientation = Orientation.FromChar('N'),
             yPosition = 0,
             xPosition = 0
         };
@@ -21,15 +21,21 @@ public class MarsRover
 
     public string Execute(string commands)
     {
-        foreach (var command in commands)
+        foreach (var singleCommand in commands)
         {
-            if (command.Equals('M'))
+            switch (Command.FromChar(singleCommand))
             {
-                Move();
-            }
-            else
-            {
-                Rotate(command);
+                case MoveCommand:
+                    Move();
+                    break;
+                case LeftCommand:
+                    orientation = orientation.Previous();
+                    break;
+                case RightCommand:
+                    orientation = orientation.Next();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(Command));
             }
         }
 
@@ -40,36 +46,17 @@ public class MarsRover
     {
         switch (orientation)
         {
-            case 'N':
+            case NOrientation:
                 yPosition++;
                 break;
-            case 'E':
+            case EOrientation:
                 xPosition++;
                 break;
-            case 'S':
+            case SOrientation:
                 yPosition--;
                 break;
-            case 'W':
+            case WOrientation:
                 xPosition--;
-                break;
-        }
-    }
-
-    public void Rotate(char direction)
-    {
-        switch (orientation)
-        {
-            case 'N':
-                orientation = direction == 'R' ? 'E' : 'W';
-                break;
-            case 'E':
-                orientation = direction == 'R' ? 'S' : 'N';
-                break;
-            case 'S':
-                orientation = direction == 'R' ? 'W' : 'E';
-                break;
-            case 'W':
-                orientation = direction == 'R' ? 'N' : 'S';
                 break;
         }
     }
