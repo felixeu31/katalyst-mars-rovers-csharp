@@ -19,27 +19,32 @@ public class MarsRover
         };
     }
 
-    public string Execute(string commands)
+    public string ExecuteCommands(string commands)
     {
         foreach (var singleCommand in commands)
         {
-            switch (Command.FromChar(singleCommand))
-            {
-                case MoveCommand:
-                    Move();
-                    break;
-                case LeftCommand:
-                    orientation = orientation.Previous();
-                    break;
-                case RightCommand:
-                    orientation = orientation.Next();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(Command));
-            }
+            ExecuteCommand(singleCommand);
         }
 
         return this.ToString();
+    }
+
+    private void ExecuteCommand(char singleCommand)
+    {
+        switch (Command.FromChar(singleCommand))
+        {
+            case MoveCommand:
+                Move();
+                break;
+            case LeftCommand:
+                orientation = orientation.Previous();
+                break;
+            case RightCommand:
+                orientation = orientation.Next();
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(Command));
+        }
     }
 
     private void Move()

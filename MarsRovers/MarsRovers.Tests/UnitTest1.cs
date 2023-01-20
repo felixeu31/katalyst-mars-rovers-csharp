@@ -16,7 +16,7 @@ namespace MarsRovers.Tests
             var marsRover = MarsRover.Init();
 
             // Act
-            string position = marsRover.Execute(string.Empty);
+            string position = marsRover.ExecuteCommands(string.Empty);
 
             // Assert
             position.Should().Be("0:0:N");
@@ -29,7 +29,7 @@ namespace MarsRovers.Tests
             var marsRover = MarsRover.Init();
 
             // Act
-            string position = marsRover.Execute("R");
+            string position = marsRover.ExecuteCommands("R");
 
             // Assert
             position.Should().Be("0:0:E");
@@ -43,7 +43,7 @@ namespace MarsRovers.Tests
             var marsRover = MarsRover.Init();
 
             // Act
-            string position = marsRover.Execute("L");
+            string position = marsRover.ExecuteCommands("L");
 
             // Assert
             position.Should().Be("0:0:W");
@@ -56,7 +56,7 @@ namespace MarsRovers.Tests
             var marsRover = MarsRover.Init();
 
             // Act
-            string position = marsRover.Execute("LL");
+            string position = marsRover.ExecuteCommands("LL");
 
             // Assert
             position.Should().Be("0:0:S");
@@ -70,7 +70,7 @@ namespace MarsRovers.Tests
             var marsRover = MarsRover.Init();
 
             // Act
-            string position = marsRover.Execute("LLL");
+            string position = marsRover.ExecuteCommands("LLL");
 
             // Assert
             position.Should().Be("0:0:E");
@@ -83,7 +83,7 @@ namespace MarsRovers.Tests
             var marsRover = MarsRover.Init();
 
             // Act
-            string position = marsRover.Execute("LLLL");
+            string position = marsRover.ExecuteCommands("LLLL");
 
             // Assert
             position.Should().Be("0:0:N");
@@ -97,7 +97,7 @@ namespace MarsRovers.Tests
             var marsRover = MarsRover.Init();
 
             // Act
-            string position = marsRover.Execute("RR");
+            string position = marsRover.ExecuteCommands("RR");
 
             // Assert
             position.Should().Be("0:0:S");
@@ -111,7 +111,7 @@ namespace MarsRovers.Tests
             var marsRover = MarsRover.Init();
 
             // Act
-            string position = marsRover.Execute("M");
+            string position = marsRover.ExecuteCommands("M");
 
             // Assert
             position.Should().Be("0:1:N");
@@ -124,7 +124,7 @@ namespace MarsRovers.Tests
             var marsRover = MarsRover.Init();
 
             // Act
-            string position = marsRover.Execute("RM");
+            string position = marsRover.ExecuteCommands("RM");
 
             // Assert
             position.Should().Be("1:0:E");
@@ -139,7 +139,7 @@ namespace MarsRovers.Tests
             var marsRover = MarsRover.Init();
 
             // Act
-            string position = marsRover.Execute(commands);
+            string position = marsRover.ExecuteCommands(commands);
 
             // Assert
             position.Should().Be(output);
@@ -153,7 +153,7 @@ namespace MarsRovers.Tests
             var marsRover = MarsRover.Init();
 
             // Act
-            string position = marsRover.Execute("MMMMMMMMMM");
+            string position = marsRover.ExecuteCommands("MMMMMMMMMM");
 
             // Assert
             position.Should().Be("0:0:N");
@@ -166,7 +166,7 @@ namespace MarsRovers.Tests
             var marsRover = MarsRover.Init();
 
             // Act
-            string position = marsRover.Execute("RRMMMMMMMMMM");
+            string position = marsRover.ExecuteCommands("RRMMMMMMMMMM");
 
             // Assert
             position.Should().Be("0:0:S");
@@ -179,7 +179,7 @@ namespace MarsRovers.Tests
             var marsRover = MarsRover.Init();
 
             // Act
-            string position = marsRover.Execute("RMMMMMMMMMM");
+            string position = marsRover.ExecuteCommands("RMMMMMMMMMM");
 
             // Assert
             position.Should().Be("0:0:E");
@@ -193,7 +193,7 @@ namespace MarsRovers.Tests
             var marsRover = MarsRover.Init();
 
             // Act
-            string position = marsRover.Execute("RMMMMMMMMMM");
+            string position = marsRover.ExecuteCommands("RMMMMMMMMMM");
 
             // Assert
             position.Should().Be("0:0:E");
