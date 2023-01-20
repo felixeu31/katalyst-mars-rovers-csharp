@@ -16,7 +16,14 @@ public class Position
 
     public void Increment()
     {
-        _position++;
+        if (_position == 9)
+        {
+            _position = 0;
+        }
+        else
+        {
+            _position++;
+        }
     }
 
     public void Decrement()
