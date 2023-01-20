@@ -127,7 +127,7 @@ namespace MarsRovers.Tests
             string position = marsRover.Execute("RM");
 
             // Assert
-            position.Should().Be("0:1:E");
+            position.Should().Be("1:0:E");
         }
 
 

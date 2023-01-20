@@ -8,13 +8,30 @@ public class MarsRovers
     {
         var orientation = "N";
         var yPosition = 0;
+        var xPosition = 0;
         
 
         foreach (var singleCommand in command)
         {
             if (singleCommand.ToString().Equals("M"))
             {
-                yPosition++;
+
+                switch (orientation)
+                {
+
+                    case "N":
+                        yPosition++;
+                        break;
+                    case "E":
+                        xPosition++;
+                        break;
+                    case "S":
+                        yPosition--;
+                        break;
+                    case "W":
+                        xPosition--;
+                        break;
+                }
             }
             else
             {
@@ -22,7 +39,7 @@ public class MarsRovers
             }
         }
 
-        return $"0:{yPosition}:{orientation}";
+        return $"{xPosition}:{yPosition}:{orientation}";
     }
 
     private string rotate(string currentOrientation, string direction)
